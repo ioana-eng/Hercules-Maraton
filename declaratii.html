@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Declarații pe proprie răspundere - Hercules Maraton</title>
+
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800;900&display=swap');
+
+    @font-face {
+      font-family: 'Bodega Sans';
+      src: url('/fonts/BodegaSans.woff2') format('woff2');
+      font-weight: 700;
+      font-style: normal;
+      font-display: swap;
+    }
+
+    :root {
+      --black: #101111;
+      --dark: #080808;
+      --white: #ffffff;
+      --cream: #f3f0ea;
+      --turquoise: #00E0DD;
+      --yellow: #FFAD1D;
+      --orange: #FF6914;
+      --red: #DA0000;
+      --burgundy: #830000;
+      --text: #ffffff;
+      --text-dark: #101111;
+      --muted: #cfcfcf;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: var(--black);
+      color: var(--white);
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    .navbar {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: #000;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 18px 6%;
+      border-bottom: 1px solid rgba(255,255,255,0.08);
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      font-family: 'Bodega Sans', 'Poppins', sans-serif;
+      font-weight: 900;
+      letter-spacing: 0.5px;
+      text-transform: uppercase;
+    }
+
+    .logo img {
+      height: 60px;
+      width: auto;
+      display: block;
+    }
+
+    .menu {
+      display: flex;
+      gap: 32px;
+      font-weight: 800;
+      font-size: 15px;
+      text-transform: uppercase;
+    }
+
+    .menu a:hover {
+      color: var(--yellow);
+    }
+
+    .btn {
+      display: inline-block;
+      background: var(--red);
+      color: #fff;
+      font-weight: 900;
+      padding: 14px 28px;
+      border-radius: 4px;
+      text-transform: uppercase;
+      border: 2px solid var(--red);
+      transition: background 0.2s, border-color 0.2s;
+    }
+
+    .btn:hover {
+      background: var(--orange);
+      border-color: var(--orange);
+    }
+
+    .navbar-btn {
+      padding: 9px 18px;
+      font-size: 12px;
+    }
+
+    .hero {
+      min-height: 360px;
+      background:
+        linear-gradient(rgba(0,0,0,0.75), rgba(0,0,0,0.85)),
+        var(--dark);
+      background-size: cover;
+      background-position: center;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: 60px 8%;
+      text-align: center;
+    }
+
+    .hero h1 {
+      font-family: 'Bodega Sans', 'Poppins', sans-serif;
+      font-size: clamp(36px, 6vw, 70px);
+      line-height: 0.95;
+      font-weight: 900;
+      text-transform: uppercase;
+      letter-spacing: -1px;
+      color: var(--red);
+    }
+
+    .hero p {
+      margin-top: 16px;
+      font-size: 18px;
+      color: var(--muted);
+    }
+
+    .section {
+      padding: 70px 6%;
+    }
+
+    .section.dark {
+      background: var(--black);
+    }
+
+    .section-title {
+      font-family: 'Bodega Sans', 'Poppins', sans-serif;
+      text-align: center;
+      font-size: 42px;
+      text-transform: uppercase;
+      font-weight: 900;
+      margin-bottom: 36px;
+      letter-spacing: 0.5px;
+    }
+
+    .section-title::after {
+      content: "";
+      width: 80px;
+      height: 4px;
+      background: var(--yellow);
+      display: block;
+      margin: 10px auto 0;
+    }
+
+    .downloads-grid {
+      max-width: 900px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 30px;
+    }
+
+    .download-card {
+      background: rgba(255, 255, 255, 0.04);
+      border: 1px solid rgba(218, 0, 0, 0.35);
+      border-radius: 12px;
+      padding: 36px;
+      display: flex;
+      flex-direction: column;
+      gap: 18px;
+      transition: transform 0.2s, box-shadow 0.2s, border-color 0.2s;
+    }
+
+    .download-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 8px 24px rgba(0,0,0,0.2);
+      border-color: var(--red);
+    }
+
+    .download-card h2 {
+      font-family: 'Bodega Sans', 'Poppins', sans-serif;
+      font-size: 26px;
+      color: var(--red);
+      text-transform: uppercase;
+      line-height: 1.1;
+    }
+
+    .download-card p {
+      color: #eee;
+      font-size: 16px;
+      line-height: 1.6;
+      flex-grow: 1;
+    }
+
+    .download-card .btn {
+      align-self: flex-start;
+    }
+
+    .back-link {
+      text-align: center;
+      margin-top: 50px;
+    }
+
+    .back-link .btn {
+      background: transparent;
+      color: #fff;
+      border-color: rgba(255,255,255,0.35);
+    }
+
+    .back-link .btn:hover {
+      background: rgba(255,255,255,0.08);
+      border-color: rgba(255,255,255,0.6);
+    }
+
+    footer {
+      background: var(--dark);
+      padding: 36px 6%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      color: var(--muted);
+    }
+
+    @media (max-width: 700px) {
+      .menu {
+        display: none;
+      }
+
+      .logo img {
+        height: 50px;
+      }
+
+      .download-card {
+        padding: 26px;
+      }
+
+      .download-card h2 {
+        font-size: 22px;
+      }
+
+      footer {
+        flex-direction: column;
+        gap: 20px;
+        text-align: center;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+<header class="navbar">
+  <a class="logo" href="index.html#acasa">
+    <img src="assets/design.elements/Color%20%28Dark%20BG%29%20Main%20Logo.png" alt="Hercules Maraton" />
+  </a>
+
+  <nav class="menu">
+    <a href="index.html#probe">Probe</a>
+    <a href="index.html#editii">Ediții</a>
+    <a href="index.html#informatii">Informații</a>
+    <a href="index.html#contact">Contact</a>
+  </nav>
+
+  <a class="btn navbar-btn" href="https://racetime.ro/events/189/register" target="_blank" rel="noopener noreferrer">Înscrie-te acum</a>
+</header>
+
+<main>
+  <section class="hero">
+    <h1>Declarații pe proprie răspundere</h1>
+    <p>Descarcă și completează documentele necesare participării la Hercules Maraton 2026.</p>
+  </section>
+
+  <section class="section dark">
+    <h2 class="section-title">Documente disponibile</h2>
+
+    <div class="downloads-grid">
+      <article class="download-card">
+        <h2>Declarație pe proprie răspundere</h2>
+        <p>Formularul obligatoriu pentru toți participanții adulți la competiția Hercules Maraton 2026.</p>
+        <a class="btn" href="assets/Declaratie%20pe%20proprie%20raspundere%20-%20HM2026.pdf" download>
+          Descarcă PDF
+        </a>
+      </article>
+
+      <article class="download-card">
+        <h2>Declarație părinte pentru minor</h2>
+        <p>Formularul necesar pentru participarea minorilor, semnat de către părintele sau tutorele legal.</p>
+        <a class="btn" href="assets/Declaratie%20HM2026%20-%20Parinte%20pt%20minor.pdf" download>
+          Descarcă PDF
+        </a>
+      </article>
+    </div>
+
+    <div class="back-link">
+      <a class="btn" href="index.html#informatii">Înapoi la Informații</a>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="logo">
+    HERCULES
+    <span>MARATON</span>
+  </div>
+  <div>© 2026 Hercules Maraton. Toate drepturile rezervate.</div>
+</footer>
+
+</body>
+</html>

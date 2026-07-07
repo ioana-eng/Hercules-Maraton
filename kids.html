@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Cursa Copiilor - Hercules Maraton</title>
+
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800;900&display=swap');
+
+    @font-face {
+      font-family: 'Bodega Sans';
+      src: url('/fonts/BodegaSans.woff2') format('woff2');
+      font-weight: 700;
+      font-style: normal;
+      font-display: swap;
+    }
+
+    :root {
+      --black: #101111;
+      --dark: #080808;
+      --white: #ffffff;
+      --cream: #f3f0ea;
+      --turquoise: #00E0DD;
+      --yellow: #FFAD1D;
+      --orange: #FF6914;
+      --red: #DA0000;
+      --burgundy: #830000;
+      --purple: #9b4dff;
+      --text: #ffffff;
+      --text-dark: #101111;
+      --muted: #cfcfcf;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: var(--black);
+      color: var(--white);
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    .navbar {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: #000;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 18px 6%;
+      border-bottom: 1px solid rgba(255,255,255,0.08);
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      font-family: 'Bodega Sans', 'Poppins', sans-serif;
+      font-weight: 900;
+      letter-spacing: 0.5px;
+      text-transform: uppercase;
+    }
+
+    .logo img {
+      height: 60px;
+      width: auto;
+      display: block;
+    }
+
+    .menu {
+      display: flex;
+      gap: 32px;
+      font-weight: 800;
+      font-size: 15px;
+      text-transform: uppercase;
+    }
+
+    .menu a:hover {
+      color: var(--yellow);
+    }
+
+    .btn {
+      display: inline-block;
+      background: #00E0DD;
+      color: #000;
+      font-weight: 900;
+      padding: 14px 28px;
+      border-radius: 4px;
+      text-transform: uppercase;
+      border: 2px solid #00E0DD;
+    }
+
+    .btn:hover {
+      background: var(--orange);
+      border-color: var(--orange);
+      color: var(--white);
+    }
+
+    .navbar-btn {
+      padding: 9px 18px;
+      font-size: 12px;
+    }
+
+    .hero {
+      min-height: 420px;
+      background:
+        linear-gradient(rgba(0,0,0,0.75), rgba(0,0,0,0.85)),
+        url("assets/social-media/Kids1.jpg");
+      background-size: cover;
+      background-position: center;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: 60px 8%;
+      text-align: center;
+    }
+
+    .hero h1 {
+      font-family: 'Bodega Sans', 'Poppins', sans-serif;
+      font-size: clamp(40px, 6vw, 80px);
+      line-height: 0.9;
+      font-weight: 900;
+      text-transform: uppercase;
+      letter-spacing: -2px;
+      color: #9b4dff;
+    }
+
+    .hero p {
+      margin-top: 20px;
+      font-size: 20px;
+      color: var(--muted);
+    }
+
+    .section {
+      padding: 70px 6%;
+    }
+
+    .section.dark {
+      background: var(--black);
+    }
+
+    .section-title {
+      font-family: 'Bodega Sans', 'Poppins', sans-serif;
+      text-align: center;
+      font-size: 42px;
+      text-transform: uppercase;
+      font-weight: 900;
+      margin-bottom: 36px;
+      letter-spacing: 0.5px;
+    }
+
+    .section-title::after {
+      content: "";
+      width: 80px;
+      height: 4px;
+      background: var(--yellow);
+      display: block;
+      margin: 10px auto 0;
+    }
+
+    .detail-card {
+      max-width: 900px;
+      margin: 0 auto;
+      background: rgba(255, 255, 255, 0.04);
+      border: 1px solid rgba(155, 77, 255, 0.35);
+      border-radius: 12px;
+      padding: 40px;
+    }
+
+    .detail-card h2 {
+      font-family: 'Bodega Sans', 'Poppins', sans-serif;
+      font-size: 32px;
+      color: #9b4dff;
+      margin-bottom: 24px;
+      text-transform: uppercase;
+    }
+
+    .detail-card h3 {
+      font-family: 'Bodega Sans', 'Poppins', sans-serif;
+      font-size: 22px;
+      color: #9b4dff;
+      margin: 32px 0 16px;
+      text-transform: uppercase;
+    }
+
+    .detail-card p {
+      line-height: 1.8;
+      margin-bottom: 16px;
+      color: #eee;
+      font-size: 17px;
+    }
+
+    .age-list {
+      list-style: none;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin: 16px 0 24px;
+    }
+
+    .age-list li {
+      padding: 10px 18px;
+      background: rgba(155, 77, 255, 0.15);
+      border: 1px solid rgba(155, 77, 255, 0.4);
+      border-radius: 30px;
+      font-weight: 800;
+      font-size: 15px;
+    }
+
+    .detail-list {
+      list-style: none;
+      display: grid;
+      gap: 12px;
+      margin: 20px 0;
+    }
+
+    .detail-list li {
+      padding: 14px 18px;
+      background: rgba(0, 0, 0, 0.35);
+      border-left: 4px solid #9b4dff;
+      border-radius: 0 8px 8px 0;
+      font-size: 16px;
+      line-height: 1.5;
+    }
+
+    .detail-list li strong {
+      color: var(--yellow);
+      text-transform: uppercase;
+      font-size: 13px;
+      letter-spacing: 1px;
+      margin-right: 8px;
+    }
+
+    .back-link {
+      text-align: center;
+      margin-top: 40px;
+    }
+
+    footer {
+      background: var(--dark);
+      padding: 36px 6%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      color: var(--muted);
+    }
+
+    @media (max-width: 700px) {
+      .menu {
+        display: none;
+      }
+
+      .logo img {
+        height: 50px;
+      }
+
+      .detail-card {
+        padding: 24px;
+      }
+
+      .detail-card h2 {
+        font-size: 24px;
+      }
+
+      .age-list {
+        gap: 8px;
+      }
+
+      .age-list li {
+        font-size: 13px;
+        padding: 8px 14px;
+      }
+
+      footer {
+        flex-direction: column;
+        gap: 20px;
+        text-align: center;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+<header class="navbar">
+  <a class="logo" href="index.html#acasa">
+    <img src="assets/design.elements/Color%20%28Dark%20BG%29%20Main%20Logo.png" alt="Hercules Maraton" />
+  </a>
+
+  <nav class="menu">
+    <a href="index.html#probe">Probe</a>
+    <a href="index.html#editii">Ediții</a>
+    <a href="index.html#informatii">Informații</a>
+    <a href="index.html#contact">Contact</a>
+  </nav>
+
+  <a class="btn navbar-btn" href="https://racetime.ro/events/189/register" target="_blank" rel="noopener noreferrer">Înscrie-te acum</a>
+</header>
+
+<main>
+  <section class="hero">
+    <h1>Cursa Copiilor</h1>
+    <p>O cursă distractivă cu obstacole, pentru cei mici.</p>
+  </section>
+
+  <section class="section dark">
+    <h2 class="section-title">Detalii cursă</h2>
+
+    <div class="detail-card">
+      <h2>Cursa Copiilor</h2>
+
+      <h3>Categorii de vârstă</h3>
+      <ul class="age-list">
+        <li>3–5 ani</li>
+        <li>6–8 ani</li>
+        <li>9–10 ani</li>
+      </ul>
+
+      <h3>Descriere</h3>
+      <p>
+        O cursă distractivă cu obstacole, creată pentru ca cei mici să descopere bucuria mișcării în natură. Traseul include provocări adaptate copiilor, precum alergare printre jaloane, mers în echilibru, sărit cu sacul, târâș pe sub obstacole și alte surprize, într-un mediu sigur și prietenos.
+      </p>
+
+      <h3>Formatul cursei</h3>
+      <ul class="detail-list">
+        <li><strong>3–5 ani:</strong> 1 tură de poiană + 1 trecere prin traseul cu obstacole</li>
+        <li><strong>6–8 ani:</strong> 2 ture de poiană + 2 treceri prin traseul cu obstacole</li>
+        <li><strong>9–10 ani:</strong> 2 ture de poiană + 2 treceri prin traseul cu obstacole</li>
+        <li>Start individual, la intervale de 30–60 de secunde</li>
+        <li>Copiii din categoria 3–5 ani pot fi însoțiți de un părinte pe traseu.</li>
+      </ul>
+
+      <h3>Toți copiii primesc</h3>
+      <ul class="detail-list">
+        <li>Medalie de Finisher</li>
+        <li>Diplomă de participare</li>
+        <li>Pachet de participare cu surprize oferite de partenerii evenimentului</li>
+      </ul>
+
+      <h3>Important</h3>
+      <ul class="detail-list">
+        <li>Nu există clasament sau podium.</li>
+        <li>Accentul este pus pe distracție, mișcare și experiența trăită în natură.</li>
+      </ul>
+
+      <div class="back-link">
+        <a class="btn" href="index.html#probe">Înapoi la probe</a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="logo">
+    HERCULES
+    <span>MARATON</span>
+  </div>
+  <div>© 2026 Hercules Maraton. Toate drepturile rezervate.</div>
+</footer>
+
+</body>
+</html>

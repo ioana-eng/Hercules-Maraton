@@ -1,0 +1,521 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Hercules Maraton - Ediție</title>
+
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800;900&display=swap');
+
+    @font-face {
+      font-family: 'Bodega Sans';
+      src: url('/fonts/BodegaSans.woff2') format('woff2');
+      font-weight: 700;
+      font-style: normal;
+      font-display: swap;
+    }
+
+    :root {
+      --black: #101111;
+      --dark: #080808;
+      --white: #ffffff;
+      --cream: #f3f0ea;
+
+      --turquoise: #00E0DD;
+      --yellow: #FFAD1D;
+      --orange: #FF6914;
+      --red: #DA0000;
+      --burgundy: #830000;
+
+      --text: #ffffff;
+      --text-dark: #101111;
+      --muted: #cfcfcf;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: var(--black);
+      color: var(--white);
+    }
+
+    h1, h2, h3, .section-title, .logo {
+      font-family: 'Bodega Sans', 'Poppins', sans-serif;
+      font-weight: 900;
+      letter-spacing: 0.5px;
+      text-transform: uppercase;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    .navbar {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: #000;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 18px 6%;
+      border-bottom: 1px solid rgba(255,255,255,0.08);
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+    }
+
+    .logo img {
+      height: 60px;
+      width: auto;
+      display: block;
+    }
+
+    .menu {
+      display: flex;
+      gap: 32px;
+      font-weight: 800;
+      font-size: 15px;
+      text-transform: uppercase;
+    }
+
+    .menu a:hover {
+      color: var(--yellow);
+    }
+
+    .btn {
+      display: inline-block;
+      background: #00E0DD;
+      color: #000;
+      font-weight: 900;
+      padding: 14px 28px;
+      border-radius: 4px;
+      text-transform: uppercase;
+      border: 2px solid #00E0DD;
+    }
+
+    .btn:hover {
+      background: var(--orange);
+      border-color: var(--orange);
+      color: var(--white);
+    }
+
+    .btn.outline {
+      background: transparent;
+      color: var(--white);
+      border: 2px solid #00E0DD;
+    }
+
+    .btn.outline:hover {
+      background: #00E0DD;
+      border-color: #00E0DD;
+      color: #000;
+    }
+
+    .navbar-btn {
+      padding: 9px 18px;
+      font-size: 12px;
+    }
+
+    .hero {
+      min-height: 380px;
+      background:
+        linear-gradient(rgba(0,0,0,0.8), rgba(0,0,0,0.5)),
+        url("https://images.unsplash.com/photo-1551632811-561732d1e306?auto=format&fit=crop&w=1800&q=80");
+      background-size: cover;
+      background-position: center;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: 60px 8%;
+      text-align: center;
+    }
+
+    .hero h1 {
+      font-size: clamp(40px, 6vw, 80px);
+      line-height: 0.9;
+      font-weight: 1000;
+      text-transform: uppercase;
+      letter-spacing: -2px;
+    }
+
+    .hero p {
+      margin-top: 20px;
+      font-size: 20px;
+      color: var(--muted);
+    }
+
+    .section {
+      padding: 70px 6%;
+    }
+
+    .section.dark {
+      background: var(--black);
+    }
+
+    .section.light {
+      background: var(--cream);
+      color: var(--black);
+    }
+
+    .section-title {
+      text-align: center;
+      font-size: 36px;
+      text-transform: uppercase;
+      font-weight: 1000;
+      margin-bottom: 36px;
+    }
+
+    .section-title::after {
+      content: "";
+      width: 80px;
+      height: 4px;
+      background: var(--yellow);
+      display: block;
+      margin: 10px auto 0;
+    }
+
+    .edition-details {
+      max-width: 800px;
+      margin: 0 auto;
+      background: var(--black);
+      padding: 40px;
+      border-radius: 6px;
+      border: 1px solid rgba(255,255,255,0.1);
+    }
+
+    .edition-details h2 {
+      color: var(--yellow);
+      font-size: 32px;
+      margin-bottom: 24px;
+      text-transform: uppercase;
+    }
+
+    .edition-details p {
+      margin-bottom: 14px;
+      line-height: 1.6;
+      font-size: 18px;
+    }
+
+    .edition-details strong {
+      color: var(--white);
+    }
+
+    .race-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 24px;
+      margin-top: 30px;
+    }
+
+    .race-card {
+      min-height: 220px;
+      background-size: cover;
+      background-position: center;
+      border: 1px solid rgba(255, 173, 29, 0.35);
+      border-radius: 6px;
+      transition: border-color 0.25s, transform 0.25s;
+    }
+
+    .race-card:hover {
+      border-color: var(--yellow);
+      transform: translateY(-4px);
+    }
+      overflow: hidden;
+      position: relative;
+    }
+
+    .race-card::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to top, rgba(0,0,0,0.95), rgba(0,0,0,0.15));
+    }
+
+    .race-content {
+      position: absolute;
+      bottom: 18px;
+      left: 18px;
+      right: 18px;
+    }
+
+    .race-content h3 {
+      font-size: 22px;
+      text-transform: uppercase;
+      margin-bottom: 6px;
+    }
+
+    .race-content p {
+      margin: 0;
+      font-size: 15px;
+      color: #eee;
+    }
+
+    .maraton { color: #DA0000; }
+    .semimaraton { color: #FFAD1D; }
+    .cros { color: #00E0DD; }
+    .kids { color: #9b4dff; }
+
+    .small-btn.maraton {
+      border-color: #DA0000;
+      color: #DA0000;
+    }
+
+    .small-btn.semimaraton {
+      border-color: #FFAD1D;
+      color: #FFAD1D;
+    }
+
+    .small-btn.cros {
+      border-color: #00E0DD;
+      color: #00E0DD;
+    }
+
+    .small-btn.kids {
+      border-color: #9b4dff;
+      color: #9b4dff;
+    }
+
+    .info-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 24px;
+      margin-top: 30px;
+    }
+
+    .info-card {
+      background: #fff;
+      color: #111;
+      padding: 24px;
+      border-radius: 6px;
+      border: 1px solid #ddd;
+    }
+
+    .info-card h3 {
+      margin-bottom: 10px;
+      font-size: 22px;
+    }
+
+    .info-card p {
+      line-height: 1.5;
+    }
+
+    .back-link {
+      text-align: center;
+      margin-top: 40px;
+    }
+
+    footer {
+      background: var(--dark);
+      padding: 36px 6%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      color: var(--muted);
+    }
+
+    @media (max-width: 700px) {
+      .menu {
+        display: none;
+      }
+
+      .logo img {
+        height: 50px;
+      }
+
+      footer {
+        flex-direction: column;
+        gap: 20px;
+        text-align: center;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+<header class="navbar">
+  <a class="logo" href="index.html#acasa">
+    <img src="assets/design.elements/Color%20%28Dark%20BG%29%20Main%20Logo.png" alt="Hercules Maraton" />
+  </a>
+
+  <nav class="menu">
+    <a href="index.html#probe">Probe</a>
+    <a href="index.html#editii">Ediții</a>
+    <a href="index.html#informatii">Informații</a>
+    <a href="index.html#contact">Contact</a>
+  </nav>
+
+  <a class="btn navbar-btn" href="https://racetime.ro/events/189/register" target="_blank" rel="noopener noreferrer">Înscrie-te acum</a>
+</header>
+
+<main>
+  <section class="hero">
+    <h1 id="edition-heading">Ediția</h1>
+    <p id="edition-subtitle"></p>
+  </section>
+
+  <section class="section dark">
+    <div class="edition-details" id="edition-details">
+      <!-- Populated by JS -->
+    </div>
+
+    <div class="back-link">
+      <a class="btn" href="index.html#editii">Înapoi la ediții</a>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="logo">
+    HERCULES
+    <span>MARATON</span>
+  </div>
+  <div>© 2026 Hercules Maraton. Toate drepturile rezervate.</div>
+</footer>
+
+<script>
+  const editions = [
+    {
+      year: 2026,
+      status: "curenta",
+      date: "10 octombrie 2026",
+      location: "Băile Herculane, România",
+      description: "Alege-ți provocarea! O competiție montană pentru cei care iubesc natura, mișcarea și depășirea limitelor.",
+      signupLink: "#",
+      races: [
+        {
+          name: "Maraton",
+          slug: "maraton",
+          distance: "42 km",
+          elevation: "+2.600 m",
+          colorClass: "maraton",
+          image: "https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=900&q=80"
+        },
+        {
+          name: "Semimaraton",
+          slug: "semimaraton",
+          distance: "21 km",
+          elevation: "+1.300 m",
+          colorClass: "semimaraton",
+          image: "https://images.unsplash.com/photo-1522163182402-834f871fd851?auto=format&fit=crop&w=900&q=80"
+        },
+        {
+          name: "Cros",
+          slug: "cros",
+          distance: "10 km",
+          elevation: "+500 m",
+          colorClass: "cros",
+          image: "https://images.unsplash.com/photo-1551632811-561732d1e306?auto=format&fit=crop&w=900&q=80"
+        },
+        {
+          name: "Kids",
+          slug: "kids",
+          distance: "1 km",
+          elevation: "+50 m",
+          colorClass: "kids",
+          image: "https://images.unsplash.com/photo-1503454537195-1dcabb73ffb9?auto=format&fit=crop&w=900&q=80"
+        }
+      ],
+      info: [
+        { title: "Program", text: "Afișează aici programul oficial pentru ridicarea kiturilor, starturi și festivitatea de premiere." },
+        { title: "Regulament", text: "Adaugă link către regulamentul oficial al ediției curente." },
+        { title: "Kit participanți", text: "Include detalii despre număr, tricou, medalie, puncte de hidratare și alte beneficii." },
+        { title: "Acces & cazare", text: "Informații utile despre transport, parcare, cazare și acces în zona evenimentului." }
+      ]
+    },
+    {
+      year: 2025,
+      status: "arhivata",
+      date: "11 octombrie 2025",
+      location: "Băile Herculane",
+      description: "Ediție arhivată Hercules Maraton.",
+      resultsLink: "#",
+      galleryLink: "#"
+    },
+    {
+      year: 2024,
+      status: "arhivata",
+      date: "iulie 2024",
+      location: "Băile Herculane",
+      description: "Ediție arhivată Hercules Maraton.",
+      resultsLink: "#",
+      galleryLink: "#"
+    }
+  ];
+
+  const params = new URLSearchParams(window.location.search);
+  const year = parseInt(params.get("year"), 10);
+  const edition = editions.find(e => e.year === year);
+
+  const heading = document.getElementById("edition-heading");
+  const subtitle = document.getElementById("edition-subtitle");
+  const details = document.getElementById("edition-details");
+
+  if (!edition) {
+    heading.textContent = "Ediție negăsită";
+    subtitle.textContent = "";
+    details.innerHTML = "<p>Ediția selectată nu există. <a href='index.html#editii'>Înapoi la ediții</a></p>";
+  } else {
+    heading.textContent = `Ediția ${edition.year}`;
+    subtitle.textContent = edition.status === "curenta" ? "Ediția curentă" : "Ediție arhivată";
+
+    let html = `
+      <h2>${edition.status === "curenta" ? "Ediția curentă" : "Ediție arhivată"}</h2>
+      <p><strong>Data:</strong> ${edition.date}</p>
+      <p><strong>Locație:</strong> ${edition.location}</p>
+      <p>${edition.description}</p>
+    `;
+
+    if (edition.status === "curenta" && edition.races) {
+      html += `<h3 style="margin-top: 30px; margin-bottom: 18px; text-transform: uppercase;">Probe</h3>`;
+      html += `<div class="race-grid">`;
+      edition.races.forEach(race => {
+        html += `
+          <article class="race-card" style="background-image: url('${race.image}')">
+            <div class="race-content">
+              <h3 class="${race.colorClass}">${race.name}</h3>
+              <p>${race.distance} &nbsp; | &nbsp; ${race.elevation}</p>
+            </div>
+          </article>
+        `;
+      });
+      html += `</div>`;
+
+      if (edition.info) {
+        html += `<h3 style="margin-top: 40px; margin-bottom: 18px; text-transform: uppercase;">Informații</h3>`;
+        html += `<div class="info-grid">`;
+        edition.info.forEach(item => {
+          html += `
+            <article class="info-card">
+              <h3>${item.title}</h3>
+              <p>${item.text}</p>
+            </article>
+          `;
+        });
+        html += `</div>`;
+      }
+    } else {
+      html += `
+        <div style="margin-top: 30px; display: flex; gap: 20px; flex-wrap: wrap;">
+          <a class="btn outline" href="${edition.resultsLink}">Rezultate</a>
+          <a class="btn outline" href="${edition.galleryLink}">Galerie foto</a>
+        </div>
+      `;
+    }
+
+    details.innerHTML = html;
+  }
+</script>
+
+</body>
+</html>
