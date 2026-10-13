@@ -1,0 +1,641 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+  <meta charset="UTF-8">
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  >
+
+  <meta
+    name="description"
+    content="Descoperă conținutul kiturilor de participare pentru probele Hercules Maraton."
+  >
+
+  <title>Kit participanți | Hercules Maraton</title>
+  <link rel="icon" type="image/svg+xml" href="assets/design.elements/favicon.svg">
+  <link rel="canonical" href="https://newhercules.site/kit.html">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Hercules Maraton">
+  <meta property="og:locale" content="ro_RO">
+  <meta property="og:title" content="Kit participanți | Hercules Maraton">
+  <meta property="og:description" content="Descoperă conținutul kiturilor de participare pentru probele Hercules Maraton.">
+  <meta property="og:url" content="https://newhercules.site/kit.html">
+  <meta property="og:image" content="https://newhercules.site/assets/design.elements/FB%20Event%20Cover.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="theme-color" content="#101111">
+
+  <style>
+    :root {
+      --black: #050505;
+      --white: #ffffff;
+      --cream: #f3f0e9;
+      --turquoise: #00d1d1;
+      --turquoise-dark: #00b8b8;
+      --orange: #f6a900;
+      --text-muted: #5d5d5d;
+      --border: #dedbd4;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      background: var(--cream);
+      color: var(--black);
+      font-family: Arial, Helvetica, sans-serif;
+    }
+
+    a {
+      color: inherit;
+    }
+
+    .site-header {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: var(--black);
+    }
+
+    .header-inner {
+      width: min(1180px, calc(100% - 40px));
+      min-height: 108px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 30px;
+    }
+
+    .logo {
+      display: inline-flex;
+      align-items: center;
+      text-decoration: none;
+      color: var(--white);
+      font-weight: 900;
+      font-size: 20px;
+    }
+
+    .logo img {
+      display: block;
+      width: 82px;
+      height: auto;
+    }
+
+    .main-nav {
+      display: flex;
+      align-items: center;
+      gap: 42px;
+    }
+
+    .main-nav a {
+      color: var(--white);
+      text-decoration: none;
+      font-size: 17px;
+      font-weight: 900;
+    }
+
+    .main-nav a:hover {
+      color: var(--turquoise);
+    }
+
+    .dropdown {
+      position: relative;
+    }
+
+    .dropdown-menu {
+      position: absolute;
+      top: 100%;
+      left: 0;
+      min-width: 200px;
+      background: #000;
+      border: 1px solid rgba(255,255,255,0.1);
+      display: none;
+      flex-direction: column;
+      padding: 8px 0;
+      z-index: 200;
+    }
+
+    .dropdown:hover .dropdown-menu,
+    .dropdown:focus-within .dropdown-menu {
+      display: flex;
+    }
+
+    .dropdown-menu a {
+      display: block;
+      padding: 10px 20px;
+      font-size: 14px;
+      font-weight: 800;
+      text-transform: uppercase;
+      white-space: nowrap;
+    }
+
+    .dropdown-menu a:hover {
+      background: rgba(255,255,255,0.06);
+    }
+
+    .register-button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 52px;
+      padding: 0 28px;
+      border-radius: 7px;
+      background: var(--turquoise);
+      color: var(--black);
+      text-decoration: none;
+      font-size: 16px;
+      font-weight: 900;
+      transition:
+        background 0.2s ease,
+        transform 0.2s ease;
+    }
+
+    .register-button:hover {
+      background: var(--turquoise-dark);
+      transform: translateY(-2px);
+    }
+
+    .hero {
+      background: var(--black);
+      color: var(--white);
+      padding: 78px 20px 94px;
+    }
+
+    .hero-inner {
+      width: min(1180px, 100%);
+      margin: 0 auto;
+    }
+
+    .eyebrow {
+      display: inline-block;
+      margin-bottom: 18px;
+      color: var(--turquoise);
+      font-size: 14px;
+      font-weight: 900;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+    }
+
+    .hero h1 {
+      max-width: 850px;
+      margin: 0 0 24px;
+      font-size: clamp(44px, 7vw, 82px);
+      line-height: 0.95;
+      font-weight: 900;
+      letter-spacing: -0.045em;
+      text-transform: uppercase;
+    }
+
+    .hero p {
+      max-width: 760px;
+      margin: 0;
+      color: #d8d8d8;
+      font-size: clamp(18px, 2vw, 23px);
+      line-height: 1.55;
+    }
+
+    .hero-accent {
+      width: 92px;
+      height: 7px;
+      margin-top: 32px;
+      background: var(--orange);
+    }
+
+    .kit-section {
+      width: min(1180px, calc(100% - 40px));
+      margin: 0 auto;
+      padding: 74px 0 48px;
+    }
+
+    .section-heading {
+      max-width: 800px;
+      margin-bottom: 42px;
+    }
+
+    .section-heading h2 {
+      margin: 0 0 16px;
+      font-size: clamp(32px, 4vw, 52px);
+      line-height: 1.05;
+      text-transform: uppercase;
+    }
+
+    .section-heading p {
+      margin: 0;
+      color: var(--text-muted);
+      font-size: 18px;
+      line-height: 1.55;
+    }
+
+    .kit-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 28px;
+    }
+
+    .kit-card {
+      position: relative;
+      overflow: hidden;
+      padding: 38px;
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      background: var(--white);
+    }
+
+    .kit-card::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 7px;
+      background: var(--turquoise);
+    }
+
+    .kit-card--children::before {
+      background: var(--orange);
+    }
+
+    .kit-card__label {
+      display: inline-flex;
+      margin-bottom: 22px;
+      padding: 8px 13px;
+      border-radius: 999px;
+      background: rgba(0, 209, 209, 0.12);
+      font-size: 13px;
+      font-weight: 900;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+    }
+
+    .kit-card--children .kit-card__label {
+      background: rgba(246, 169, 0, 0.15);
+    }
+
+    .kit-card h2 {
+      margin: 0 0 28px;
+      font-size: clamp(27px, 3vw, 38px);
+      line-height: 1.05;
+      text-transform: uppercase;
+    }
+
+    .kit-list {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    .kit-list li {
+      position: relative;
+      padding: 13px 0 13px 34px;
+      border-bottom: 1px solid #eceae5;
+      font-size: 17px;
+      line-height: 1.4;
+    }
+
+    .kit-list li:last-child {
+      border-bottom: 0;
+    }
+
+    .kit-list li::before {
+      content: "✓";
+      position: absolute;
+      top: 13px;
+      left: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 22px;
+      height: 22px;
+      border-radius: 50%;
+      background: var(--turquoise);
+      color: var(--black);
+      font-size: 13px;
+      font-weight: 900;
+    }
+
+    .kit-card--children .kit-list li::before {
+      background: var(--orange);
+    }
+
+    .kit-note {
+      margin: 22px 0 0;
+      padding: 16px;
+      border-radius: 8px;
+      background: #f7f6f3;
+      color: #444;
+      font-size: 15px;
+      line-height: 1.55;
+    }
+
+    .kit-note strong {
+      display: block;
+      margin-bottom: 6px;
+      color: var(--black);
+    }
+
+    .notice {
+      width: min(1180px, calc(100% - 40px));
+      margin: 20px auto 82px;
+      padding: 34px 38px;
+      border-left: 7px solid var(--orange);
+      border-radius: 8px;
+      background: var(--black);
+      color: var(--white);
+    }
+
+    .notice h2 {
+      margin: 0 0 14px;
+      font-size: 23px;
+      text-transform: uppercase;
+    }
+
+    .notice p {
+      margin: 0;
+      color: #dddddd;
+      font-size: 16px;
+      line-height: 1.65;
+    }
+
+    .page-actions {
+      width: min(1180px, calc(100% - 40px));
+      margin: 0 auto 80px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+    }
+
+    .action-button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 52px;
+      padding: 0 24px;
+      border: 2px solid var(--black);
+      border-radius: 7px;
+      background: var(--black);
+      color: var(--white);
+      text-decoration: none;
+      font-size: 15px;
+      font-weight: 900;
+      text-transform: uppercase;
+      transition:
+        background 0.2s ease,
+        color 0.2s ease,
+        transform 0.2s ease;
+    }
+
+    .action-button:hover {
+      transform: translateY(-2px);
+    }
+
+    .action-button--secondary {
+      background: transparent;
+      color: var(--black);
+    }
+
+    .action-button--secondary:hover {
+      background: var(--black);
+      color: var(--white);
+    }
+
+    .site-footer {
+      padding: 34px 20px;
+      background: var(--black);
+      color: #bdbdbd;
+      text-align: center;
+      font-size: 14px;
+    }
+
+    @media (max-width: 900px) {
+      .main-nav {
+        display: none;
+      }
+
+      .header-inner {
+        min-height: 88px;
+      }
+
+      .logo img {
+        width: 65px;
+      }
+
+      .kit-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 600px) {
+      .header-inner {
+        width: min(100% - 28px, 1180px);
+        gap: 16px;
+      }
+
+      .register-button {
+        min-height: 46px;
+        padding: 0 17px;
+        font-size: 13px;
+      }
+
+      .hero {
+        padding: 58px 20px 68px;
+      }
+
+      .kit-section {
+        width: min(100% - 28px, 1180px);
+        padding-top: 52px;
+      }
+
+      .kit-card {
+        padding: 32px 24px;
+      }
+
+      .kit-list li {
+        font-size: 16px;
+      }
+
+      .notice {
+        width: min(100% - 28px, 1180px);
+        padding: 28px 24px;
+      }
+
+      .page-actions {
+        width: min(100% - 28px, 1180px);
+        flex-direction: column;
+      }
+
+      .action-button {
+        width: 100%;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <header class="site-header">
+    <div class="header-inner">
+
+      <a href="/" class="logo" aria-label="Hercules Maraton">
+        <img
+          src="assets/design.elements/Color%20%28Dark%20BG%29%20Main%20Logo.png"
+          alt="Hercules Maraton"
+        >
+      </a>
+
+      <nav class="main-nav" aria-label="Navigație principală">
+        <a href="/#probe">PROBE</a>
+        <div class="dropdown">
+          <a href="/editii.html">EDIȚII HM</a>
+          <div class="dropdown-menu" style="display: none;">
+            <a href="/editie.html?year=2026">HERCULES MARATON 2026</a>
+            <a href="/editie.html?year=2025">HERCULES MARATON 2025</a>
+            <a href="/editie.html?year=2024">HERCULES MARATON 2024</a>
+          </div>
+        </div>
+        <a href="/#contact">CONTACT</a>
+      </nav>
+
+      <a href="https://racetime.ro/events/189/register" target="_blank" rel="noopener noreferrer" class="register-button">
+        ÎNSCRIE-TE ACUM
+      </a>
+
+    </div>
+  </header>
+
+  <main>
+
+    <section class="hero">
+      <div class="hero-inner">
+
+        <span class="eyebrow">
+          Hercules Maraton
+        </span>
+
+        <h1>Kit participanți</h1>
+
+        <p>
+          Vezi elementele incluse în kitul de concurs pentru
+          fiecare dintre probele Hercules Maraton.
+        </p>
+
+        <div class="hero-accent"></div>
+
+      </div>
+    </section>
+
+    <section class="kit-section">
+
+      <div class="section-heading">
+        <h2>Conținutul kiturilor</h2>
+
+        <p>
+          Kitul se ridică în perioada și din locația comunicate
+          de organizatori înaintea evenimentului.
+        </p>
+      </div>
+
+      <div class="kit-grid">
+
+        <article class="kit-card">
+          <span class="kit-card__label">
+            Maraton și Semimaraton
+          </span>
+
+          <h2>Kit Maraton &amp; Semimaraton</h2>
+
+          <ul class="kit-list">
+            <li><strong>Tricou oficial Hercules Maraton</strong></li>
+            <li>Pungă oficială de concurs</li>
+            <li>Bandană oficială Hercules Maraton</li>
+            <li>Număr de concurs cu cip de cronometrare</li>
+            <li>4 ace de siguranță</li>
+            <li>Harta traseului, descrierea cursei și profilul traseului</li>
+            <li>Programul evenimentului</li>
+            <li>Sticker Hercules Maraton</li>
+            <li>Calendar Hercules Maraton</li>
+          </ul>
+        </article>
+
+        <article class="kit-card">
+          <span class="kit-card__label">
+            Cros
+          </span>
+
+          <h2>Kit Cros</h2>
+
+          <ul class="kit-list">
+            <li>Pungă oficială de concurs</li>
+            <li>Bandană oficială Hercules Maraton</li>
+            <li>Număr de concurs cu cip de cronometrare</li>
+            <li>4 ace de siguranță</li>
+            <li>Harta traseului, descrierea cursei și profilul traseului</li>
+            <li>Programul evenimentului</li>
+            <li>Sticker Hercules Maraton</li>
+            <li>Calendar Hercules Maraton</li>
+          </ul>
+
+          <p class="kit-note">
+            <strong>Vrei și tricoul oficial Hercules Maraton?</strong>
+            Pentru proba de Cros, acesta se achiziționează separat și poate fi adăugat în coș în momentul înscrierii.
+          </p>
+        </article>
+
+        <article class="kit-card kit-card--children">
+          <span class="kit-card__label">
+            Cursa Copiilor
+          </span>
+
+          <h2>Kit Cursa Copiilor</h2>
+
+          <ul class="kit-list">
+            <li>Pungă oficială de concurs</li>
+            <li>Bandană oficială Hercules Maraton</li>
+            <li>Fructe</li>
+            <li>Sticker Hercules Maraton</li>
+            <li>Calendar Hercules Maraton</li>
+          </ul>
+        </article>
+
+      </div>
+    </section>
+
+    <aside class="notice">
+      <h2>Informație importantă</h2>
+
+      <p>
+        Conținutul kitului de concurs poate varia în funcție de
+        disponibilitate. Kitul poate include și produse sau materiale
+        promoționale suplimentare oferite de partenerii și sponsorii
+        Hercules Maraton. Organizatorul își rezervă dreptul de a
+        actualiza elementele incluse în kit.
+      </p>
+    </aside>
+
+    <div class="page-actions">
+      <a href="/" class="action-button action-button--secondary">
+        Înapoi la pagina principală
+      </a>
+
+      <a href="https://racetime.ro/events/189/register" target="_blank" rel="noopener noreferrer" class="action-button">
+        Înscrie-te acum
+      </a>
+    </div>
+
+  </main>
+
+  <footer class="site-footer">
+    © 2026 Hercules Maraton. Toate drepturile rezervate.
+    <br>
+    Powered by <a href="https://www.buildwithif.ro" target="_blank" rel="noopener noreferrer">BuildWithIF</a>
+  </footer>
+
+</body>
+</html>

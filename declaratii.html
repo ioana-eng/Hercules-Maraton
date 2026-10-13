@@ -4,6 +4,18 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Declarații pe proprie răspundere - Hercules Maraton</title>
+  <link rel="icon" type="image/svg+xml" href="assets/design.elements/favicon.svg">
+  <meta name="description" content="Descarcă declarațiile pe proprie răspundere necesare participării la Hercules Maraton 2026.">
+  <link rel="canonical" href="https://newhercules.site/declaratii.html">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Hercules Maraton">
+  <meta property="og:locale" content="ro_RO">
+  <meta property="og:title" content="Declarații pe proprie răspundere - Hercules Maraton">
+  <meta property="og:description" content="Descarcă declarațiile pe proprie răspundere necesare participării la Hercules Maraton 2026.">
+  <meta property="og:url" content="https://newhercules.site/declaratii.html">
+  <meta property="og:image" content="https://newhercules.site/assets/design.elements/FB%20Event%20Cover.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="theme-color" content="#101111">
 
   <style>
     @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800;900&display=swap');
@@ -87,6 +99,41 @@
       color: var(--yellow);
     }
 
+    .dropdown {
+      position: relative;
+    }
+
+    .dropdown-menu {
+      position: absolute;
+      top: 100%;
+      left: 0;
+      min-width: 200px;
+      background: #000;
+      border: 1px solid rgba(255,255,255,0.1);
+      display: none;
+      flex-direction: column;
+      padding: 8px 0;
+      z-index: 200;
+    }
+
+    .dropdown:hover .dropdown-menu,
+    .dropdown:focus-within .dropdown-menu {
+      display: flex;
+    }
+
+    .dropdown-menu a {
+      display: block;
+      padding: 10px 20px;
+      font-size: 14px;
+      font-weight: 800;
+      text-transform: uppercase;
+      white-space: nowrap;
+    }
+
+    .dropdown-menu a:hover {
+      background: rgba(255,255,255,0.06);
+    }
+
     .btn {
       display: inline-block;
       background: var(--red);
@@ -112,10 +159,10 @@
     .hero {
       min-height: 360px;
       background:
-        linear-gradient(rgba(0,0,0,0.75), rgba(0,0,0,0.85)),
-        var(--dark);
+        linear-gradient(rgba(0,0,0,0.45), rgba(0,0,0,0.60)),
+        url("assets/design.elements/Site_Hero.png");
       background-size: cover;
-      background-position: center;
+      background-position: left center;
       display: flex;
       flex-direction: column;
       justify-content: center;
@@ -130,13 +177,13 @@
       font-weight: 900;
       text-transform: uppercase;
       letter-spacing: -1px;
-      color: var(--red);
+      color: var(--white);
     }
 
     .hero p {
       margin-top: 16px;
       font-size: 18px;
-      color: var(--muted);
+      color: #eee;
     }
 
     .section {
@@ -270,12 +317,16 @@
 
   <nav class="menu">
     <a href="index.html#probe">Probe</a>
-    <a href="index.html#editii">Ediții</a>
-    <a href="index.html#informatii">Informații</a>
+    <div class="dropdown">
+      <a href="editii.html">Ediții HM</a>
+      <div class="dropdown-menu" style="display: none;">
+        <a href="editie.html?year=2026">Hercules Maraton 2026</a>
+        <a href="editie.html?year=2025">Hercules Maraton 2025</a>
+        <a href="editie.html?year=2024">Hercules Maraton 2024</a>
+      </div>
+    </div>
     <a href="index.html#contact">Contact</a>
   </nav>
-
-  <a class="btn navbar-btn" href="https://racetime.ro/events/189/register" target="_blank" rel="noopener noreferrer">Înscrie-te acum</a>
 </header>
 
 <main>
@@ -291,7 +342,7 @@
       <article class="download-card">
         <h2>Declarație pe proprie răspundere</h2>
         <p>Formularul obligatoriu pentru toți participanții adulți la competiția Hercules Maraton 2026.</p>
-        <a class="btn" href="assets/Declaratie%20pe%20proprie%20raspundere%20-%20HM2026.pdf" download>
+        <a class="btn" href="assets/Declaratie%20pe%20proprie%20raspundere_HM2026_adulti.pdf" download>
           Descarcă PDF
         </a>
       </article>
@@ -299,14 +350,22 @@
       <article class="download-card">
         <h2>Declarație părinte pentru minor</h2>
         <p>Formularul necesar pentru participarea minorilor, semnat de către părintele sau tutorele legal.</p>
-        <a class="btn" href="assets/Declaratie%20HM2026%20-%20Parinte%20pt%20minor.pdf" download>
+        <a class="btn" href="assets/Declaratie%20Parinte_HM2026.pdf" download>
+          Descarcă PDF
+        </a>
+      </article>
+
+      <article class="download-card">
+        <h2>Declarație Cursa Copiilor</h2>
+        <p>Formularul necesar pentru participarea copiilor la Cursa Copiilor Hercules Maraton 2026.</p>
+        <a class="btn" href="assets/Declaratie%20Cursa%20Copiilor_HM2026.pdf" download>
           Descarcă PDF
         </a>
       </article>
     </div>
 
     <div class="back-link">
-      <a class="btn" href="index.html#informatii">Înapoi la Informații</a>
+      <a class="btn" href="editie.html?year=2026">Înapoi la Informații</a>
     </div>
   </section>
 </main>
@@ -317,6 +376,7 @@
     <span>MARATON</span>
   </div>
   <div>© 2026 Hercules Maraton. Toate drepturile rezervate.</div>
+  <div>Powered by <a href="https://www.buildwithif.ro" target="_blank" rel="noopener noreferrer">BuildWithIF</a></div>
 </footer>
 
 </body>

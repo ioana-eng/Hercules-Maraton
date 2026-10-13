@@ -4,6 +4,19 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Hercules Maraton - Ediție</title>
+  <link rel="icon" type="image/svg+xml" href="assets/design.elements/favicon.svg">
+  <script src="https://myrun.eu/widgets/photos.js" async></script>
+  <meta name="description" content="Informații despre ediția Hercules Maraton 2026: program, regulament, kitul participanților, acces și declarații pe proprie răspundere.">
+  <link rel="canonical" href="https://newhercules.site/editie.html">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Hercules Maraton">
+  <meta property="og:locale" content="ro_RO">
+  <meta property="og:title" content="Hercules Maraton - Ediție">
+  <meta property="og:description" content="Informații despre ediția Hercules Maraton 2026: program, regulament, kitul participanților, acces și declarații pe proprie răspundere.">
+  <meta property="og:url" content="https://newhercules.site/editie.html">
+  <meta property="og:image" content="https://newhercules.site/assets/design.elements/FB%20Event%20Cover.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="theme-color" content="#101111">
 
   <style>
     @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800;900&display=swap');
@@ -37,6 +50,10 @@
       box-sizing: border-box;
       margin: 0;
       padding: 0;
+    }
+
+    [hidden] {
+      display: none !important;
     }
 
     body {
@@ -90,6 +107,41 @@
 
     .menu a:hover {
       color: var(--yellow);
+    }
+
+    .dropdown {
+      position: relative;
+    }
+
+    .dropdown-menu {
+      position: absolute;
+      top: 100%;
+      left: 0;
+      min-width: 200px;
+      background: #000;
+      border: 1px solid rgba(255,255,255,0.1);
+      display: none;
+      flex-direction: column;
+      padding: 8px 0;
+      z-index: 200;
+    }
+
+    .dropdown:hover .dropdown-menu,
+    .dropdown:focus-within .dropdown-menu {
+      display: flex;
+    }
+
+    .dropdown-menu a {
+      display: block;
+      padding: 10px 20px;
+      font-size: 14px;
+      font-weight: 800;
+      text-transform: uppercase;
+      white-space: nowrap;
+    }
+
+    .dropdown-menu a:hover {
+      background: rgba(255,255,255,0.06);
     }
 
     .btn {
@@ -154,6 +206,157 @@
       color: var(--muted);
     }
 
+    .hero-home {
+      min-height: calc(100vh - 90px);
+      padding: clamp(80px, 8vw, 130px) 8%;
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) minmax(320px, 520px);
+      gap: clamp(40px, 7vw, 110px);
+      align-items: center;
+      background:
+        linear-gradient(rgba(0, 0, 0, 0.40), rgba(0, 0, 0, 0.55)),
+        url("assets/design.elements/Site_Hero.png");
+      background-size: cover;
+      background-position: left center;
+    }
+
+    .hero-home .hero-left {
+      max-width: 620px;
+    }
+
+    .hero-home h1 {
+      font-size: clamp(48px, 7vw, 100px);
+      line-height: 0.92;
+      font-weight: 1000;
+      text-transform: uppercase;
+      letter-spacing: -2px;
+    }
+
+    .hero-home h2 {
+      color: #00E0DD;
+      margin: 24px 0 12px;
+      text-transform: uppercase;
+      font-size: 28px;
+    }
+
+    .hero-home p {
+      max-width: 520px;
+      font-size: 18px;
+      line-height: 1.6;
+      color: #eee;
+    }
+
+    .hero-home .hero-actions {
+      display: flex;
+      gap: 20px;
+      margin-top: 34px;
+      flex-wrap: wrap;
+    }
+
+    .hero-home .hero-right {
+      width: 100%;
+      max-width: 520px;
+      justify-self: end;
+      display: flex;
+      flex-direction: column;
+      gap: clamp(14px, 1.6vw, 22px);
+      color: #fff;
+    }
+
+    .hero-home .hero-info {
+      display: flex;
+      flex-direction: column;
+      gap: clamp(10px, 1.4vw, 16px);
+    }
+
+    .hero-home .info-row {
+      display: block;
+    }
+
+    .hero-home .label {
+      font-size: 11px;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      opacity: .65;
+    }
+
+    .hero-home .info-row h3 {
+      font-size: clamp(15px, 1.5vw, 22px);
+      line-height: 1.15;
+      font-weight: 900;
+      text-transform: uppercase;
+    }
+
+    .hero-home .hero-right hr {
+      border: none;
+      height: 1px;
+      background: rgba(255, 255, 255, 0.18);
+    }
+
+    .hero-home .countdown h4 {
+      font-size: clamp(12px, 0.9vw, 15px);
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      margin-bottom: 12px;
+    }
+
+    .hero-home .countdown-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: clamp(6px, 0.8vw, 12px);
+    }
+
+    .hero-home .countdown-grid div {
+      text-align: center;
+    }
+
+    .hero-home .countdown-grid span {
+      display: block;
+      font-size: clamp(26px, 3.2vw, 48px);
+      font-weight: 900;
+      line-height: 1;
+    }
+
+    .hero-home .countdown-grid small {
+      display: block;
+      margin-top: 4px;
+      font-size: clamp(9px, 0.75vw, 11px);
+      font-weight: 800;
+      color: #00e0dd;
+      text-transform: uppercase;
+    }
+
+    .hero-home .hero-phase h4 {
+      font-family: 'Bodega Sans', 'Poppins', sans-serif;
+      font-size: clamp(22px, 2.4vw, 34px);
+      font-weight: 900;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      line-height: 1.1;
+      margin-bottom: 18px;
+    }
+
+    .hero-home .phase-actions {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .hero-home .phase-actions .btn {
+      text-align: center;
+    }
+
+    @media (max-width: 992px) {
+      .hero-home {
+        grid-template-columns: 1fr;
+        min-height: auto;
+      }
+
+      .hero-home .hero-left {
+        max-width: 100%;
+      }
+    }
+
     .section {
       padding: 70px 6%;
     }
@@ -210,108 +413,241 @@
       color: var(--white);
     }
 
-    .race-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-      gap: 24px;
-      margin-top: 30px;
-    }
-
-    .race-card {
-      min-height: 220px;
-      background-size: cover;
-      background-position: center;
-      border: 1px solid rgba(255, 173, 29, 0.35);
-      border-radius: 6px;
-      transition: border-color 0.25s, transform 0.25s;
-    }
-
-    .race-card:hover {
-      border-color: var(--yellow);
-      transform: translateY(-4px);
-    }
-      overflow: hidden;
-      position: relative;
-    }
-
-    .race-card::before {
-      content: "";
-      position: absolute;
-      inset: 0;
-      background: linear-gradient(to top, rgba(0,0,0,0.95), rgba(0,0,0,0.15));
-    }
-
-    .race-content {
-      position: absolute;
-      bottom: 18px;
-      left: 18px;
-      right: 18px;
-    }
-
-    .race-content h3 {
-      font-size: 22px;
-      text-transform: uppercase;
-      margin-bottom: 6px;
-    }
-
-    .race-content p {
-      margin: 0;
-      font-size: 15px;
-      color: #eee;
-    }
-
-    .maraton { color: #DA0000; }
-    .semimaraton { color: #FFAD1D; }
-    .cros { color: #00E0DD; }
-    .kids { color: #9b4dff; }
-
-    .small-btn.maraton {
-      border-color: #DA0000;
-      color: #DA0000;
-    }
-
-    .small-btn.semimaraton {
-      border-color: #FFAD1D;
-      color: #FFAD1D;
-    }
-
-    .small-btn.cros {
-      border-color: #00E0DD;
-      color: #00E0DD;
-    }
-
-    .small-btn.kids {
-      border-color: #9b4dff;
-      color: #9b4dff;
-    }
-
-    .info-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-      gap: 24px;
-      margin-top: 30px;
-    }
-
-    .info-card {
-      background: #fff;
-      color: #111;
-      padding: 24px;
-      border-radius: 6px;
-      border: 1px solid #ddd;
-    }
-
-    .info-card h3 {
-      margin-bottom: 10px;
-      font-size: 22px;
-    }
-
-    .info-card p {
-      line-height: 1.5;
-    }
-
     .back-link {
       text-align: center;
       margin-top: 40px;
+    }
+
+    .edition-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 26px;
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+
+    .edition-card {
+      background: var(--black);
+      padding: 28px;
+      border-radius: 6px;
+      border: 1px solid rgba(255,255,255,0.1);
+    }
+
+    .edition-card h3 {
+      color: var(--yellow);
+      font-size: 28px;
+      margin-bottom: 12px;
+    }
+
+    .active-card {
+      cursor: pointer;
+      transition: transform 0.2s, box-shadow 0.2s, border-color 0.2s;
+    }
+
+    .active-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 8px 24px rgba(0,0,0,0.12);
+      border-color: #DA0000;
+    }
+
+    .modal-overlay {
+      position: fixed;
+      inset: 0;
+      background: rgba(0,0,0,0.65);
+      display: none;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+      z-index: 1200;
+    }
+
+    .modal-overlay.active {
+      display: flex;
+    }
+
+    .modal {
+      position: relative;
+      background: #fff;
+      color: #111;
+      border-radius: 6px;
+      width: 100%;
+      max-width: 720px;
+      max-height: 85vh;
+      overflow-y: auto;
+      padding: 36px;
+    }
+
+    .modal.wide {
+      max-width: 1000px;
+    }
+
+    .modal h3 {
+      font-size: 26px;
+      text-transform: uppercase;
+      margin-bottom: 20px;
+    }
+
+    .modal-close {
+      position: absolute;
+      top: 14px;
+      right: 14px;
+      width: 40px;
+      height: 40px;
+      border: none;
+      background: transparent;
+      color: #111;
+      font-size: 32px;
+      line-height: 1;
+      cursor: pointer;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: background 0.2s;
+    }
+
+    .modal-close:hover {
+      background: rgba(0,0,0,0.08);
+    }
+
+    .modal-body p {
+      font-size: 14px;
+      line-height: 1.55;
+      margin-bottom: 10px;
+    }
+
+    .modal-body h4 {
+      font-size: 18px;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      margin: 26px 0 6px;
+      padding-bottom: 8px;
+      border-bottom: 2px solid var(--yellow);
+    }
+
+    .modal-body h4:first-child {
+      margin-top: 0;
+    }
+
+    .modal-body .program-location {
+      font-size: 13px;
+      font-weight: 400;
+      font-style: italic;
+      color: #888;
+      margin: 0 0 10px;
+    }
+
+    .program-location a {
+      color: inherit;
+      text-decoration: underline;
+      text-underline-offset: 2px;
+    }
+
+    .program-location a:hover {
+      color: #DA0000;
+    }
+
+    .program-place {
+      font-size: 14px;
+      font-weight: 400;
+      margin: 20px 0 0;
+      padding-bottom: 6px;
+      border-bottom: 1px solid #ddd;
+    }
+
+    .program-place a {
+      color: inherit;
+      text-decoration: underline;
+      text-underline-offset: 2px;
+    }
+
+    .program-place a:hover {
+      color: #DA0000;
+    }
+
+    .route-heading {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      font-size: 14px;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      margin: 22px 0 0;
+      padding-bottom: 6px;
+      border-bottom: 1px solid #ddd;
+      cursor: pointer;
+      list-style: none;
+    }
+
+    .route-heading::-webkit-details-marker {
+      display: none;
+    }
+
+    .route-heading::after {
+      content: "▼";
+      font-size: 11px;
+      flex-shrink: 0;
+      transition: transform 0.2s;
+    }
+
+    .route-details[open] .route-heading::after {
+      transform: rotate(180deg);
+    }
+
+    .route-details .program-list {
+      margin: 8px 0 4px;
+      font-size: 14px;
+    }
+
+    .route-details .program-list li {
+      padding: 7px 0;
+    }
+
+    .access-note {
+      margin-top: 30px;
+    }
+
+    .access-program-link {
+      color: inherit;
+      font-weight: 600;
+      text-decoration: underline;
+      text-underline-offset: 2px;
+    }
+
+    .access-program-link:hover {
+      color: #DA0000;
+    }
+
+    .program-list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    .program-list li {
+      display: flex;
+      gap: 16px;
+      align-items: baseline;
+      padding: 9px 0;
+      border-bottom: 1px solid #eee;
+      line-height: 1.5;
+    }
+
+    .program-list li:last-child {
+      border-bottom: none;
+    }
+
+    .program-time {
+      flex-shrink: 0;
+      min-width: 132px;
+      font-weight: 800;
+    }
+
+    .program-list em {
+      color: #666;
+      font-style: italic;
     }
 
     footer {
@@ -350,29 +686,222 @@
 
   <nav class="menu">
     <a href="index.html#probe">Probe</a>
-    <a href="index.html#editii">Ediții</a>
-    <a href="index.html#informatii">Informații</a>
+    <div class="dropdown">
+      <a href="editii.html">Ediții HM</a>
+      <div class="dropdown-menu" style="display: none;">
+        <a href="editie.html?year=2026">Hercules Maraton 2026</a>
+        <a href="editie.html?year=2025">Hercules Maraton 2025</a>
+        <a href="editie.html?year=2024">Hercules Maraton 2024</a>
+      </div>
+    </div>
     <a href="index.html#contact">Contact</a>
   </nav>
-
-  <a class="btn navbar-btn" href="https://racetime.ro/events/189/register" target="_blank" rel="noopener noreferrer">Înscrie-te acum</a>
 </header>
 
 <main>
-  <section class="hero">
+  <section class="hero-home" id="hero-current" hidden>
+    <div class="hero-left">
+      <h1>Hercules<br>Maraton</h1>
+      <h2>Ediția 2026</h2>
+      <p>Alege-ți provocarea! O competiție montană pentru cei care iubesc natura, mișcarea și depășirea limitelor.</p>
+    </div>
+
+    <div class="hero-right">
+      <div class="hero-info">
+        <div class="info-row">
+          <div>
+            <span class="label">Data</span>
+            <h3>10 OCTOMBRIE 2026</h3>
+          </div>
+        </div>
+
+        <div class="info-row">
+          <div>
+            <span class="label">Locație</span>
+            <h3>BĂILE HERCULANE, ROMÂNIA</h3>
+          </div>
+        </div>
+      </div>
+
+      <div class="hero-actions">
+        <a class="btn outline" href="https://liniadesosire.ro/rezultate/hercules-maraton-2026/" target="_blank" rel="noopener noreferrer">Rezultate</a>
+        <a class="btn outline" href="#" id="open-photos">Poze</a>
+      </div>
+
+      <hr>
+
+      <div class="countdown" id="countdown-block">
+        <h4>PÂNĂ LA START</h4>
+        <div class="countdown-grid">
+          <div>
+            <span id="days">0</span>
+            <small>ZILE</small>
+          </div>
+          <div>
+            <span id="hours">0</span>
+            <small>ORE</small>
+          </div>
+          <div>
+            <span id="minutes">0</span>
+            <small>MIN</small>
+          </div>
+          <div>
+            <span id="seconds">0</span>
+            <small>SEC</small>
+          </div>
+        </div>
+      </div>
+
+      <div class="hero-phase" id="race-day-block" hidden>
+        <h4>AZI ESTE ZIUA DE START!</h4>
+        <div class="phase-actions">
+          <a class="btn" href="https://liniadesosire.ro/rezultate/hercules-maraton-2026/" target="_blank" rel="noopener noreferrer">Rezultate</a>
+        </div>
+      </div>
+
+      <div class="hero-phase" id="post-event-block" hidden>
+        <h4>MULȚUMIM TUTUROR PARTICIPANȚILOR!</h4>
+      </div>
+    </div>
+  </section>
+
+  <section class="hero" id="hero-archived" hidden>
     <h1 id="edition-heading">Ediția</h1>
     <p id="edition-subtitle"></p>
   </section>
 
-  <section class="section dark">
+  <section class="section dark" id="edition-section" hidden>
     <div class="edition-details" id="edition-details">
       <!-- Populated by JS -->
     </div>
 
     <div class="back-link">
-      <a class="btn" href="index.html#editii">Înapoi la ediții</a>
+      <a class="btn" href="editii.html">Înapoi la ediții</a>
     </div>
   </section>
+
+  <div class="modal-overlay" id="photos-modal" role="dialog" aria-modal="true" aria-labelledby="photos-modal-title">
+    <div class="modal wide">
+      <button class="modal-close" id="photos-modal-close" aria-label="Închide">&times;</button>
+      <h3 id="photos-modal-title">Poze</h3>
+      <div class="modal-body">
+        <photo-album event-id="01a1357d-7991-715c-b3e4-88e01a6efce3" lang="en"></photo-album>
+      </div>
+    </div>
+  </div>
+
+  <section class="section light" id="edition-info" hidden>
+    <h2 class="section-title">Informații</h2>
+    <div class="edition-grid">
+      <article class="edition-card active-card" style="background:#fff;color:#111;">
+        <h3 style="color:#111;">Listă Participanți</h3>
+        <p>Vezi participanții înscriși la ediția curentă și caută-ți înregistrarea.</p>
+        <a class="btn" href="https://racetime.ro/events/189/participants" target="_blank" rel="noopener noreferrer" style="margin-top:16px;font-size:14px;padding:12px 22px;">Vezi lista participanților</a>
+      </article>
+
+      <a href="assets/HM%20Regulament%202026_revised.pdf" target="_blank" rel="noopener noreferrer" class="edition-card active-card" style="background:#fff;color:#111;text-decoration:none;">
+        <h3 style="color:#111;">Regulament</h3>
+        <p>Descarcă regulamentul oficial al ediției curente.</p>
+      </a>
+
+      <a href="kit.html" class="edition-card active-card" style="background:#fff;color:#111;text-decoration:none;">
+        <h3 style="color:#111;">Kit Participanți</h3>
+        <p>Află ce conține kitul de participare pentru fiecare probă și pregătește-te de start.</p>
+      </a>
+
+      <article class="edition-card active-card" id="program-card" style="background:#fff;color:#111;">
+        <h3 style="color:#111;">Program</h3>
+        <p>Programul oficial pentru ridicarea kiturilor, starturi și festivitatea de premiere.</p>
+      </article>
+
+      <article class="edition-card active-card" id="access-card" style="background:#fff;color:#111;">
+        <h3 style="color:#111;">Detalii Access</h3>
+        <p>Informații utile despre transport, parcare și acces în zona evenimentului.</p>
+      </article>
+
+      <a href="declaratii.html" target="_blank" rel="noopener noreferrer" class="edition-card active-card" style="background:#fff;color:#111;text-decoration:none;">
+        <h3 style="color:#111;">Declarații pe proprie răspundere</h3>
+        <p>Descarcă declarațiile necesare participării la eveniment.</p>
+      </a>
+    </div>
+  </section>
+
+  <div class="modal-overlay" id="program-modal" role="dialog" aria-modal="true" aria-labelledby="program-modal-title">
+    <div class="modal">
+      <button class="modal-close" id="program-modal-close" aria-label="Închide">&times;</button>
+      <h3 id="program-modal-title">Program</h3>
+      <div class="modal-body">
+        <h4>Vineri, 09.10.2026</h4>
+        <p class="program-location">📍 <a href="https://maps.app.goo.gl/uMq43CQmgjCVxt8W9" rel="noopener noreferrer">Casino Băile Herculane</a><br>Toate activitățile de vineri au loc aici.</p>
+        <ul class="program-list">
+          <li><span class="program-time">16:00 – 23:00</span><span>Validarea înscrierilor</span></li>
+          <li><span class="program-time">16:00 – 21:00</span><span>Face Painting pentru copii 🎨 <em>(pe bază de donație)</em></span></li>
+          <li><span class="program-time">19:00 – 21:00</span><span>Pasta Party by Monte Banato 🍝</span></li>
+          <li><span class="program-time">20:00 – 20:30</span><span>Ședința tehnică 1</span></li>
+          <li><span class="program-time">21:00 – 21:30</span><span>Ședința tehnică 2</span></li>
+        </ul>
+
+        <h4>Sâmbătă, 10.10.2026</h4>
+        <p class="program-place">🏁 <a href="https://maps.app.goo.gl/FxNSmGCuj45mpihe8" rel="noopener noreferrer">Start — Podul Vânturătoarea, Valea Cernei</a></p>
+        <ul class="program-list">
+          <li><span class="program-time">08:30</span><span>Start Maraton</span></li>
+          <li><span class="program-time">09:00</span><span>Start Semimaraton</span></li>
+          <li><span class="program-time">09:15</span><span>Start Cros</span></li>
+        </ul>
+        <p class="program-place">📍 <a href="https://maps.app.goo.gl/8mUEj33P5UPMZEXy5" rel="noopener noreferrer">Finish &amp; Activități — zona Pensiunea Dumbrava, Valea Cernei</a></p>
+        <ul class="program-list">
+          <li><span class="program-time">10:00 – 16:00</span><span>Face Painting pentru copii 🎨 <em>(pe bază de donație)</em></span></li>
+          <li><span class="program-time">10:30</span><span>Premiere Cros</span></li>
+          <li><span class="program-time">13:00</span><span>Cursa Copiilor</span></li>
+          <li><span class="program-time">19:00</span><span>Festivitatea de premiere 🏆</span></li>
+          <li><span class="program-time">20:30</span><span>Hercules Party 🎉</span></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal-overlay" id="access-modal" role="dialog" aria-modal="true" aria-labelledby="access-modal-title">
+    <div class="modal">
+      <button class="modal-close" id="access-modal-close" aria-label="Închide">&times;</button>
+      <h3 id="access-modal-title">Detalii Access</h3>
+      <div class="modal-body">
+        <h4>🚗 Cum ajungi la Hercules</h4>
+        <p class="program-location">📍 Destinație: Pensiunea Dumbrava – Valea Cernei</p>
+
+        <details class="route-details">
+          <summary class="route-heading">Dinspre Timișoara / Arad / vestul țării</summary>
+          <ul class="program-list">
+            <li><span aria-hidden="true">➡️</span><span>Timișoara → Lugoj → Caransebeș → Băile Herculane, pe DN6 / E70</span></li>
+            <li><span aria-hidden="true">➡️</span><span>Din Băile Herculane continuați pe DN67D, în amonte pe Valea Cernei, până la Pensiunea Dumbrava. Domogled</span></li>
+          </ul>
+        </details>
+
+        <details class="route-details">
+          <summary class="route-heading">Dinspre București / Craiova / Drobeta-Turnu Severin / Orșova</summary>
+          <ul class="program-list">
+            <li><span aria-hidden="true">➡️</span><span>Urmați DN6 / E70 spre Băile Herculane</span></li>
+            <li><span aria-hidden="true">➡️</span><span>Din Băile Herculane continuați pe DN67D – Valea Cernei, spre Pensiunea Dumbrava. Domogled</span></li>
+          </ul>
+        </details>
+
+        <details class="route-details">
+          <summary class="route-heading">Dinspre Târgu Jiu / Baia de Aramă</summary>
+          <ul class="program-list">
+            <li><span aria-hidden="true">➡️</span><span>Accesul se poate face pe DN67D, dinspre Baia de Aramă spre Valea Cernei și Băile Herculane.</span></li>
+          </ul>
+        </details>
+
+        <p class="access-note">Vă recomandăm să setați destinația în GPS înainte de plecare și să nu vă bazați exclusiv pe semnalul mobil pe Valea Cernei.</p>
+        <p>Link-urile către locații le regăsiți în <a href="#" class="access-program-link" id="access-open-program">Program</a>.</p>
+
+        <h4>🚗 Parcare &amp; acces – Valea Cernei</h4>
+        <p>Locurile de parcare pe Valea Cernei sunt limitate, așa că vă rugăm să acordați atenție locului în care lăsați mașina.</p>
+        <p>Parcați doar în zonele în care acest lucru este posibil, fără a bloca circulația, căile de acces sau zonele necesare desfășurării concursului.</p>
+        <p>Vă recomandăm, pe cât posibil, să veniți împreună în aceeași mașină și să urmați indicațiile organizatorilor din zonă.</p>
+        <p>Ajutați-ne să păstrăm accesul liber și concursul în mișcare. ❤️⛰️</p>
+      </div>
+    </div>
+  </div>
 </main>
 
 <footer>
@@ -381,6 +910,7 @@
     <span>MARATON</span>
   </div>
   <div>© 2026 Hercules Maraton. Toate drepturile rezervate.</div>
+  <div>Powered by <a href="https://www.buildwithif.ro" target="_blank" rel="noopener noreferrer">BuildWithIF</a></div>
 </footer>
 
 <script>
@@ -390,48 +920,7 @@
       status: "curenta",
       date: "10 octombrie 2026",
       location: "Băile Herculane, România",
-      description: "Alege-ți provocarea! O competiție montană pentru cei care iubesc natura, mișcarea și depășirea limitelor.",
-      signupLink: "#",
-      races: [
-        {
-          name: "Maraton",
-          slug: "maraton",
-          distance: "42 km",
-          elevation: "+2.600 m",
-          colorClass: "maraton",
-          image: "https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=900&q=80"
-        },
-        {
-          name: "Semimaraton",
-          slug: "semimaraton",
-          distance: "21 km",
-          elevation: "+1.300 m",
-          colorClass: "semimaraton",
-          image: "https://images.unsplash.com/photo-1522163182402-834f871fd851?auto=format&fit=crop&w=900&q=80"
-        },
-        {
-          name: "Cros",
-          slug: "cros",
-          distance: "10 km",
-          elevation: "+500 m",
-          colorClass: "cros",
-          image: "https://images.unsplash.com/photo-1551632811-561732d1e306?auto=format&fit=crop&w=900&q=80"
-        },
-        {
-          name: "Kids",
-          slug: "kids",
-          distance: "1 km",
-          elevation: "+50 m",
-          colorClass: "kids",
-          image: "https://images.unsplash.com/photo-1503454537195-1dcabb73ffb9?auto=format&fit=crop&w=900&q=80"
-        }
-      ],
-      info: [
-        { title: "Program", text: "Afișează aici programul oficial pentru ridicarea kiturilor, starturi și festivitatea de premiere." },
-        { title: "Regulament", text: "Adaugă link către regulamentul oficial al ediției curente." },
-        { title: "Kit participanți", text: "Include detalii despre număr, tricou, medalie, puncte de hidratare și alte beneficii." },
-        { title: "Acces & cazare", text: "Informații utile despre transport, parcare, cazare și acces în zona evenimentului." }
-      ]
+      description: "Alege-ți provocarea! O competiție montană pentru cei care iubesc natura, mișcarea și depășirea limitelor."
     },
     {
       year: 2025,
@@ -457,64 +946,166 @@
   const year = parseInt(params.get("year"), 10);
   const edition = editions.find(e => e.year === year);
 
+  const heroCurrent = document.getElementById("hero-current");
+  const heroArchived = document.getElementById("hero-archived");
+  const editionSection = document.getElementById("edition-section");
   const heading = document.getElementById("edition-heading");
   const subtitle = document.getElementById("edition-subtitle");
   const details = document.getElementById("edition-details");
 
+  function startCountdown() {
+    const raceStart = new Date("2026-10-10T08:00:00").getTime();
+    const dayAfterRace = new Date("2026-10-11T00:00:00").getTime();
+    const countdownBlock = document.getElementById("countdown-block");
+    const raceDayBlock = document.getElementById("race-day-block");
+    const postEventBlock = document.getElementById("post-event-block");
+
+    function updateCountdown() {
+      const now = new Date().getTime();
+
+      if (now >= raceStart) {
+        countdownBlock.style.display = "none";
+        if (now < dayAfterRace) {
+          raceDayBlock.hidden = false;
+        } else {
+          raceDayBlock.hidden = true;
+          postEventBlock.hidden = false;
+        }
+        return;
+      }
+
+      const diff = raceStart - now;
+
+      document.getElementById("days").textContent = Math.floor(diff / (1000 * 60 * 60 * 24));
+      document.getElementById("hours").textContent = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+      document.getElementById("minutes").textContent = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+      document.getElementById("seconds").textContent = Math.floor((diff % (1000 * 60)) / 1000);
+    }
+
+    updateCountdown();
+    setInterval(updateCountdown, 1000);
+  }
+
   if (!edition) {
+    heroArchived.hidden = false;
+    editionSection.hidden = false;
     heading.textContent = "Ediție negăsită";
     subtitle.textContent = "";
-    details.innerHTML = "<p>Ediția selectată nu există. <a href='index.html#editii'>Înapoi la ediții</a></p>";
+    details.innerHTML = "<p>Ediția selectată nu există. <a href='editii.html'>Înapoi la ediții</a></p>";
+  } else if (edition.status === "curenta") {
+    heroCurrent.hidden = false;
+    document.getElementById("edition-info").hidden = false;
+    startCountdown();
   } else {
+    heroArchived.hidden = false;
+    editionSection.hidden = false;
     heading.textContent = `Ediția ${edition.year}`;
-    subtitle.textContent = edition.status === "curenta" ? "Ediția curentă" : "Ediție arhivată";
-
-    let html = `
-      <h2>${edition.status === "curenta" ? "Ediția curentă" : "Ediție arhivată"}</h2>
+    subtitle.textContent = "Ediție arhivată";
+    details.innerHTML = `
+      <h2>Ediție arhivată</h2>
       <p><strong>Data:</strong> ${edition.date}</p>
       <p><strong>Locație:</strong> ${edition.location}</p>
       <p>${edition.description}</p>
+      <div style="margin-top: 30px; display: flex; gap: 20px; flex-wrap: wrap;">
+        <a class="btn outline" href="${edition.resultsLink}">Rezultate</a>
+        <a class="btn outline" href="${edition.galleryLink}">Galerie foto</a>
+      </div>
     `;
-
-    if (edition.status === "curenta" && edition.races) {
-      html += `<h3 style="margin-top: 30px; margin-bottom: 18px; text-transform: uppercase;">Probe</h3>`;
-      html += `<div class="race-grid">`;
-      edition.races.forEach(race => {
-        html += `
-          <article class="race-card" style="background-image: url('${race.image}')">
-            <div class="race-content">
-              <h3 class="${race.colorClass}">${race.name}</h3>
-              <p>${race.distance} &nbsp; | &nbsp; ${race.elevation}</p>
-            </div>
-          </article>
-        `;
-      });
-      html += `</div>`;
-
-      if (edition.info) {
-        html += `<h3 style="margin-top: 40px; margin-bottom: 18px; text-transform: uppercase;">Informații</h3>`;
-        html += `<div class="info-grid">`;
-        edition.info.forEach(item => {
-          html += `
-            <article class="info-card">
-              <h3>${item.title}</h3>
-              <p>${item.text}</p>
-            </article>
-          `;
-        });
-        html += `</div>`;
-      }
-    } else {
-      html += `
-        <div style="margin-top: 30px; display: flex; gap: 20px; flex-wrap: wrap;">
-          <a class="btn outline" href="${edition.resultsLink}">Rezultate</a>
-          <a class="btn outline" href="${edition.galleryLink}">Galerie foto</a>
-        </div>
-      `;
-    }
-
-    details.innerHTML = html;
   }
+
+  const programCard = document.getElementById("program-card");
+  const programModal = document.getElementById("program-modal");
+  const programModalClose = document.getElementById("program-modal-close");
+
+  function openProgramModal() {
+    programModal.classList.add("active");
+    document.body.style.overflow = "hidden";
+  }
+
+  function closeProgramModal() {
+    programModal.classList.remove("active");
+    document.body.style.overflow = "";
+  }
+
+  programCard.addEventListener("click", openProgramModal);
+  programModalClose.addEventListener("click", closeProgramModal);
+
+  programModal.addEventListener("click", (event) => {
+    if (event.target === programModal) {
+      closeProgramModal();
+    }
+  });
+
+  const accessCard = document.getElementById("access-card");
+  const accessModal = document.getElementById("access-modal");
+  const accessModalClose = document.getElementById("access-modal-close");
+
+  function openAccessModal() {
+    accessModal.classList.add("active");
+    document.body.style.overflow = "hidden";
+  }
+
+  function closeAccessModal() {
+    accessModal.classList.remove("active");
+    document.body.style.overflow = "";
+  }
+
+  accessCard.addEventListener("click", openAccessModal);
+  accessModalClose.addEventListener("click", closeAccessModal);
+
+  accessModal.addEventListener("click", (event) => {
+    if (event.target === accessModal) {
+      closeAccessModal();
+    }
+  });
+
+  const photosBtn = document.getElementById("open-photos");
+  const photosModal = document.getElementById("photos-modal");
+  const photosModalClose = document.getElementById("photos-modal-close");
+
+  function openPhotosModal() {
+    photosModal.classList.add("active");
+    document.body.style.overflow = "hidden";
+  }
+
+  function closePhotosModal() {
+    photosModal.classList.remove("active");
+    document.body.style.overflow = "";
+  }
+
+  photosBtn.addEventListener("click", (event) => {
+    event.preventDefault();
+    openPhotosModal();
+  });
+
+  photosModalClose.addEventListener("click", closePhotosModal);
+
+  photosModal.addEventListener("click", (event) => {
+    if (event.target === photosModal) {
+      closePhotosModal();
+    }
+  });
+
+  document.addEventListener("keydown", (event) => {
+    if (event.key !== "Escape") return;
+    if (programModal.classList.contains("active")) {
+      closeProgramModal();
+    }
+    if (accessModal.classList.contains("active")) {
+      closeAccessModal();
+    }
+    if (photosModal.classList.contains("active")) {
+      closePhotosModal();
+    }
+  });
+
+  const accessProgramLink = document.getElementById("access-open-program");
+
+  accessProgramLink.addEventListener("click", (event) => {
+    event.preventDefault();
+    closeAccessModal();
+    openProgramModal();
+  });
 </script>
 
 </body>

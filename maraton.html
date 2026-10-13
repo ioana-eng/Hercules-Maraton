@@ -4,6 +4,18 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Maraton 45,1 km - Hercules Maraton</title>
+  <link rel="icon" type="image/svg+xml" href="assets/design.elements/favicon.svg">
+  <meta name="description" content="Maraton 45,1 km și +2300 m diferență de nivel la Hercules Maraton, Băile Herculane — traseu montan spectaculos prin Valea Cernei.">
+  <link rel="canonical" href="https://newhercules.site/maraton.html">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Hercules Maraton">
+  <meta property="og:locale" content="ro_RO">
+  <meta property="og:title" content="Maraton 45,1 km - Hercules Maraton">
+  <meta property="og:description" content="Maraton 45,1 km și +2300 m diferență de nivel la Hercules Maraton, Băile Herculane — traseu montan spectaculos prin Valea Cernei.">
+  <meta property="og:url" content="https://newhercules.site/maraton.html">
+  <meta property="og:image" content="https://newhercules.site/assets/design.elements/FB%20Event%20Cover.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="theme-color" content="#101111">
 
   <style>
     @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800;900&display=swap');
@@ -85,6 +97,41 @@
 
     .menu a:hover {
       color: var(--yellow);
+    }
+
+    .dropdown {
+      position: relative;
+    }
+
+    .dropdown-menu {
+      position: absolute;
+      top: 100%;
+      left: 0;
+      min-width: 200px;
+      background: #000;
+      border: 1px solid rgba(255,255,255,0.1);
+      display: none;
+      flex-direction: column;
+      padding: 8px 0;
+      z-index: 200;
+    }
+
+    .dropdown:hover .dropdown-menu,
+    .dropdown:focus-within .dropdown-menu {
+      display: flex;
+    }
+
+    .dropdown-menu a {
+      display: block;
+      padding: 10px 20px;
+      font-size: 14px;
+      font-weight: 800;
+      text-transform: uppercase;
+      white-space: nowrap;
+    }
+
+    .dropdown-menu a:hover {
+      background: rgba(255,255,255,0.06);
     }
 
     .btn {
@@ -307,12 +354,16 @@
 
   <nav class="menu">
     <a href="index.html#probe">Probe</a>
-    <a href="index.html#editii">Ediții</a>
-    <a href="index.html#informatii">Informații</a>
+    <div class="dropdown">
+      <a href="editii.html">Ediții HM</a>
+      <div class="dropdown-menu" style="display: none;">
+        <a href="editie.html?year=2026">Hercules Maraton 2026</a>
+        <a href="editie.html?year=2025">Hercules Maraton 2025</a>
+        <a href="editie.html?year=2024">Hercules Maraton 2024</a>
+      </div>
+    </div>
     <a href="index.html#contact">Contact</a>
   </nav>
-
-  <a class="btn navbar-btn" href="https://racetime.ro/events/189/register" target="_blank" rel="noopener noreferrer">Înscrie-te acum</a>
 </header>
 
 <main>
@@ -424,6 +475,7 @@
     <span>MARATON</span>
   </div>
   <div>© 2026 Hercules Maraton. Toate drepturile rezervate.</div>
+  <div>Powered by <a href="https://www.buildwithif.ro" target="_blank" rel="noopener noreferrer">BuildWithIF</a></div>
 </footer>
 
 </body>

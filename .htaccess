@@ -1,0 +1,4 @@
+RewriteEngine On
+
+# Ruta folosită de frontend pentru lista de participanți
+RewriteRule ^api/participants$ api/participants.php [L]

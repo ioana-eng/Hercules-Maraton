@@ -1,0 +1,9 @@
+version: "3.8"
+
+services:
+  hercules-site:
+    build: .
+    container_name: hercules-site
+    ports:
+      - "80:80"
+    restart: unless-stopped

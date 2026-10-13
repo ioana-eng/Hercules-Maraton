@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Hercules Maraton - Ediții</title>
+  <link rel="icon" type="image/svg+xml" href="assets/design.elements/favicon.svg">
+  <meta name="description" content="Arhiva edițiilor Hercules Maraton: ediția curentă 2026 și edițiile anterioare 2025 și 2024 — rezultate și galerie foto.">
+  <link rel="canonical" href="https://newhercules.site/editii.html">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Hercules Maraton">
+  <meta property="og:locale" content="ro_RO">
+  <meta property="og:title" content="Hercules Maraton - Ediții">
+  <meta property="og:description" content="Arhiva edițiilor Hercules Maraton: ediția curentă 2026 și edițiile anterioare 2025 și 2024 — rezultate și galerie foto.">
+  <meta property="og:url" content="https://newhercules.site/editii.html">
+  <meta property="og:image" content="https://newhercules.site/assets/design.elements/FB%20Event%20Cover.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="theme-color" content="#101111">
+
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800;900&display=swap');
+
+    @font-face {
+      font-family: 'Bodega Sans';
+      src: url('/fonts/BodegaSans.woff2') format('woff2');
+      font-weight: 700;
+      font-style: normal;
+      font-display: swap;
+    }
+
+    :root {
+      --black: #101111;
+      --dark: #080808;
+      --white: #ffffff;
+      --cream: #f3f0ea;
+
+      --turquoise: #00E0DD;
+      --yellow: #FFAD1D;
+      --orange: #FF6914;
+      --red: #DA0000;
+      --burgundy: #830000;
+
+      --text: #ffffff;
+      --text-dark: #101111;
+      --muted: #cfcfcf;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: var(--black);
+      color: var(--white);
+    }
+
+    h1, h2, h3, .section-title, .logo {
+      font-family: 'Bodega Sans', 'Poppins', sans-serif;
+      font-weight: 900;
+      letter-spacing: 0.5px;
+      text-transform: uppercase;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    .navbar {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: #000;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 18px 6%;
+      border-bottom: 1px solid rgba(255,255,255,0.08);
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+    }
+
+    .logo img {
+      height: 60px;
+      width: auto;
+      display: block;
+    }
+
+    .menu {
+      display: flex;
+      gap: 32px;
+      font-weight: 800;
+      font-size: 15px;
+      text-transform: uppercase;
+    }
+
+    .menu a:hover {
+      color: var(--yellow);
+    }
+
+    .dropdown {
+      position: relative;
+    }
+
+    .dropdown-menu {
+      position: absolute;
+      top: 100%;
+      left: 0;
+      min-width: 200px;
+      background: #000;
+      border: 1px solid rgba(255,255,255,0.1);
+      display: none;
+      flex-direction: column;
+      padding: 8px 0;
+      z-index: 200;
+    }
+
+    .dropdown:hover .dropdown-menu,
+    .dropdown:focus-within .dropdown-menu {
+      display: flex;
+    }
+
+    .dropdown-menu a {
+      display: block;
+      padding: 10px 20px;
+      font-size: 14px;
+      font-weight: 800;
+      text-transform: uppercase;
+      white-space: nowrap;
+    }
+
+    .dropdown-menu a:hover {
+      background: rgba(255,255,255,0.06);
+    }
+
+    .btn {
+      display: inline-block;
+      background: #00E0DD;
+      color: #000;
+      font-weight: 900;
+      padding: 14px 28px;
+      border-radius: 4px;
+      text-transform: uppercase;
+      border: 2px solid #00E0DD;
+    }
+
+    .btn:hover {
+      background: var(--orange);
+      border-color: var(--orange);
+      color: var(--white);
+    }
+
+    .section {
+      padding: 70px 6%;
+    }
+
+    .section.dark {
+      background: var(--black);
+    }
+
+    .section-title {
+      text-align: center;
+      font-size: 36px;
+      text-transform: uppercase;
+      font-weight: 1000;
+      margin-bottom: 36px;
+    }
+
+    .section-title::after {
+      content: "";
+      width: 80px;
+      height: 4px;
+      background: var(--yellow);
+      display: block;
+      margin: 10px auto 0;
+    }
+
+    .editions-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 26px;
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+
+    .edition-tile {
+      background: var(--dark);
+      border: 1px solid rgba(255,255,255,0.1);
+      border-radius: 6px;
+      padding: 32px 28px;
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+      transition: transform 0.2s, box-shadow 0.2s, border-color 0.2s;
+    }
+
+    .edition-tile:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 8px 24px rgba(0,0,0,0.35);
+      border-color: var(--yellow);
+    }
+
+    .edition-tile .year {
+      font-family: 'Bodega Sans', 'Poppins', sans-serif;
+      font-size: 44px;
+      font-weight: 900;
+      color: var(--yellow);
+      line-height: 1;
+    }
+
+    .edition-tile .meta {
+      color: var(--muted);
+      font-size: 15px;
+      line-height: 1.6;
+    }
+
+    .edition-tile.inactive {
+      opacity: 0.55;
+      filter: grayscale(0.35);
+    }
+
+    .edition-tile.inactive:hover {
+      transform: none;
+      box-shadow: none;
+      border-color: rgba(255,255,255,0.1);
+    }
+
+    .edition-tile.inactive .btn {
+      cursor: default;
+    }
+
+    .edition-tile.featured {
+      background-image:
+        linear-gradient(rgba(0,0,0,0.55), rgba(0,0,0,0.75)),
+        url("assets/design.elements/Site_Footer.png");
+      background-size: cover;
+      background-position: center;
+    }
+
+    .edition-tile .btn {
+      margin-top: auto;
+      text-align: center;
+      font-size: 14px;
+      padding: 12px 22px;
+    }
+
+    footer {
+      background: var(--dark);
+      padding: 36px 6%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      color: var(--muted);
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+
+    footer .btn {
+      padding: 9px 18px;
+      font-size: 12px;
+    }
+
+    @media (max-width: 700px) {
+      .menu {
+        display: none;
+      }
+
+      .logo img {
+        height: 50px;
+      }
+
+      footer {
+        flex-direction: column;
+        text-align: center;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+<header class="navbar">
+  <a class="logo" href="index.html#acasa">
+    <img src="assets/design.elements/Color%20%28Dark%20BG%29%20Main%20Logo.png" alt="Hercules Maraton" />
+  </a>
+
+  <nav class="menu">
+    <a href="index.html#probe">Probe</a>
+    <div class="dropdown">
+      <a href="editii.html">Ediții HM</a>
+      <div class="dropdown-menu" style="display: none;">
+        <a href="editie.html?year=2026">Hercules Maraton 2026</a>
+        <a href="editie.html?year=2025">Hercules Maraton 2025</a>
+        <a href="editie.html?year=2024">Hercules Maraton 2024</a>
+      </div>
+    </div>
+    <a href="index.html#contact">Contact</a>
+  </nav>
+</header>
+
+<main>
+  <section class="section dark">
+    <h2 class="section-title">Toate edițiile</h2>
+
+    <div class="editions-grid">
+      <article class="edition-tile featured">
+        <span class="year">2026</span>
+        <p class="meta">10 octombrie 2026<br>Băile Herculane, România</p>
+        <a class="btn" href="editie.html?year=2026">Vezi ediția</a>
+      </article>
+
+      <article class="edition-tile inactive">
+        <span class="year">2025</span>
+        <p class="meta">11 octombrie 2025<br>Băile Herculane</p>
+        <span class="btn">Vezi ediția</span>
+      </article>
+
+      <article class="edition-tile inactive">
+        <span class="year">2024</span>
+        <p class="meta">iulie 2024<br>Băile Herculane</p>
+        <span class="btn">Vezi ediția</span>
+      </article>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="logo">
+    HERCULES
+    <span>MARATON</span>
+  </div>
+  <div>© 2026 Hercules Maraton. Toate drepturile rezervate.</div>
+  <div>Powered by <a href="https://www.buildwithif.ro" target="_blank" rel="noopener noreferrer">BuildWithIF</a></div>
+</footer>
+
+</body>
+</html>
