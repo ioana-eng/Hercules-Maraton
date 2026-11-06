@@ -909,7 +909,7 @@
       </div>
 
       <div class="hero-quick">
-        <a class="btn outline" href="https://alternativetm.ro/shop/" target="_blank" rel="noopener noreferrer">SHOP Black Friday</a>
+        <a class="btn outline" id="shop-btn" href="https://alternativetm.ro/shop/" target="_blank" rel="noopener noreferrer">SHOP Black Friday</a>
         <a class="btn outline" href="#" id="open-photos">Poze</a>
       </div>
     </div>
@@ -1125,6 +1125,12 @@
   const countdownBlock = document.getElementById("countdown-block");
   const raceDayBlock = document.getElementById("race-day-block");
   const postEventBlock = document.getElementById("post-event-block");
+
+  // Din 9 noiembrie 2026 butonul devine "SHOP" si ramane asa permanent
+  const shopBtn = document.getElementById("shop-btn");
+  if (new Date() >= new Date("2026-11-09T00:00:00")) {
+    shopBtn.textContent = "SHOP";
+  }
 
   function updateCountdown() {
     const now = new Date().getTime();
